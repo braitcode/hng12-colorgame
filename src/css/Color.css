@@ -1,0 +1,202 @@
+body {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .game-container {
+    width: 541px;
+    height: 700px;
+    background-color: beige;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .colorText {
+    color: blueviolet;
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .score{
+    color: blueviolet;
+    font-size: 18px;
+  }
+  
+  .btn {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: darkviolet;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .border-line {
+    border: 1px solid black;
+    width: 100%;
+  }
+  
+  .target-color {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .colours {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .color-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .color-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .game-status {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  @keyframes correctGuess {
+    0% { transform: scale(1); background-color: transparent; color: black; }
+    50% { transform: scale(1.2); background-color: lightgreen; color: darkgreen; }
+    100% { transform: scale(1); background-color: transparent; color: black; }
+  }
+  
+  @keyframes wrongGuess {
+    0% { transform: scale(1); background-color: transparent; color: black; }
+    50% { transform: scale(0.9); background-color: lightcoral; color: darkred; }
+    100% { transform: scale(1); background-color: transparent; color: black; }
+  }
+  
+  .correct {
+    animation: correctGuess 0.8s ease-in-out;
+    border: 2px solid green;
+    border-radius: 10px;
+  }
+  
+  .wrong {
+    animation: wrongGuess 0.8s ease-in-out;
+    border: 2px solid red;
+    border-radius: 10px;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content h2 {
+    color: blueviolet;
+  }
+  
+  .modal-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: blueviolet;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background: darkviolet;
+  }
+  
+  /* For small devices (phones, max-width: 600px) */
+@media screen and (max-width: 600px) {
+    .body{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Lato";
+    }
+    .game-container{
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Lato";
+    }
+}

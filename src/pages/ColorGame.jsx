@@ -90,7 +90,7 @@ const ColorGame = () => {
     <div className="body">
       <div className="game-container">
         <div className="header">
-          <p className="colorText">Colour Guessing Game</p>
+          <p className="colorText">Colour Game</p>
           <p className="score" data-testid="score">Score: {score}</p>
           {/* <p>Time Left: {timeLeft}s</p> */}
           <button className="btn" data-testid="newGameButton" onClick={resetGame}>New Game</button>

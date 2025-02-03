@@ -61,7 +61,7 @@ const ColorGame = () => {
     if (color === targetColor) {
       const newScore = score + 1;
       setScore(newScore);
-      setStatus("You are correct!");
+      setStatus("You are correct! 🎊");
       document.querySelector(".game-status").classList.add("correct");
 
       setTimeout(() => {
@@ -75,7 +75,7 @@ const ColorGame = () => {
         setShowModal(true);
       }
     } else {
-      setStatus("You are wrong! Score reset.");
+      setStatus("You are wrong! ❌");
       setScore(0);
       document.querySelector(".game-status").classList.add("wrong");
 
@@ -118,7 +118,7 @@ const ColorGame = () => {
         <p className="game-status" data-testid="gameStatus">{status}</p>
       </div>
 
-      {showModal && (
+      {/* {showModal && (
         <div className="modal">
           <div className="modal-content">
             <h2>New High Score!</h2>
@@ -126,7 +126,7 @@ const ColorGame = () => {
             <button onClick={() => setShowModal(false)}>Close</button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
